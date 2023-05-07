@@ -1,0 +1,20 @@
+type User {
+  id: ID!
+  name: String!
+  height: String!
+  mass: String!
+  gender: String!
+  homeworld: String!
+}
+
+type UsersResponse {
+  count: Int!
+  next: String
+  previous: String
+  results: [User]!
+}
+
+type Query {
+  allUsers(page: Int!): UsersResponse
+  searchUser(name: String!): [User]
+}
